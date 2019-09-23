@@ -22,8 +22,8 @@ function draw()
   
 
   // add/subract xpos and ypos
-  xpos = xpos - x - speed;
-  ypos = ypos + y + speed;
+  xpos = xpos - x;
+  ypos = ypos + y;
 
   // wrap ellipse if over bounds
   if(xpos > windowWidth) { xpos = windowWidth; x=-x }
@@ -52,5 +52,12 @@ window.addEventListener('devicemotion', function(e)
   // get accelerometer values
   x = parseInt(e.accelerationIncludingGravity.x);
   y = parseInt(e.accelerationIncludingGravity.y);
-  z = parseInt(e.accelerationIncludingGravity.z); 
+  z = parseInt(e.accelerationIncludingGravity.z);
+
+  if(x == 0 && y == 0) {
+    //speed = 0;
+  }
+  else {
+    //speed = 2;
+  }
 });
