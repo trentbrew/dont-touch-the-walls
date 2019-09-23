@@ -1,6 +1,6 @@
 var x, y, z;
 var xpos, ypos;
-
+var speed = 1;
 
 function setup() 
 {
@@ -22,8 +22,8 @@ function draw()
   
 
   // add/subract xpos and ypos
-  xpos = xpos - x;
-  ypos = ypos + y;
+  xpos = xpos - x - speed;
+  ypos = ypos + y + speed;
 
   // wrap ellipse if over bounds
   if(xpos > windowWidth) { xpos = windowWidth; x=-x }
