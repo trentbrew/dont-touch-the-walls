@@ -48,7 +48,8 @@ function draw()
 
   if(get(xpos, ypos)[1] == 224) {
     console.log('dead');
-    background(255,0,0);
+    xpos = windowWidth/2;
+    ypos = 50;
   }
   if(get(xpos, ypos)[1] == 209) {
     console.log('win');
