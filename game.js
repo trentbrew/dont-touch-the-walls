@@ -42,6 +42,13 @@ function draw()
   xpos = xpos - x;
   ypos = ypos + y;
 
+  if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+    background(0,0,0);
+    console.log('not on apple device');
+    xpos = xpos + x;
+    ypos = ypos - y;
+  }
+
   //current collision
   console.log(get(xpos, ypos)[1]);
   console.log('x: ' + xpos + ' y: ' + ypos);
