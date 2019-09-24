@@ -3,12 +3,19 @@ var xpos, ypos;
 var speed = 1;
 a = 0;
 trail = [];
+let level;
 
 function setup() 
 {
+  level = loadImage("./levels/level1.svg");
+  console.log(level)
+
   rectMode(CENTER);
   // set canvas size
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(375, 685);
+
+  //level loading
+
 
   // default values
   xpos = windowWidth/2;
@@ -20,14 +27,19 @@ function setup()
 function draw() 
 {
   // set background color to white
-  background(255,255,255);
+  background(level);
+  //image(img, 0, 0);
 
-  console.log('speed: ' + speed);
+  //console.log('speed: ' + speed);
   
 
   // add/subract xpos and ypos
   xpos = xpos - x;
   ypos = ypos + y;
+
+  //console.log(get(xpos, ypos));
+
+
 
   // wrap ellipse if over bounds
   if(xpos > windowWidth) { 
@@ -58,9 +70,9 @@ function draw()
   fill('#bdbdbd');
   noStroke();
   text("Don't touch the walls!", 25, 25);
-  text("x: " + x, 25, 50);
-  text("y: " + y, 25, 75);
-  text("z: " + z, 25, 100); 
+  text("x: " + x, 25, 75);
+  text("y: " + y, 25, 100);
+  text("z: " + z, 25, 125); 
 }
 
 // accelerometer Data
