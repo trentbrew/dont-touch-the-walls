@@ -43,14 +43,16 @@ function draw()
   ypos = ypos + y;
 
   //current collision
-  console.log(get(xpos, ypos)[0]);
+  console.log(get(xpos, ypos)[1]);
   console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if(get(xpos, ypos)[0] == 224) {
+  if(get(xpos, ypos)[1] == 224) {
     console.log('dead');
+    background(255,0,0);
   }
-  if(get(xpos, ypos)[0] == 0) {
+  if(get(xpos, ypos)[1] == 209) {
     console.log('win');
+    background(0,255,0);
   }
 
 
