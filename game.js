@@ -27,7 +27,7 @@ function draw()
 
   // add/subract xpos and ypos
   xpos = xpos - x;
-  ypos = ypos + (y - 10);
+  ypos = ypos + y;
 
   // wrap ellipse if over bounds
   if(xpos > windowWidth) { 
