@@ -46,8 +46,11 @@ function draw()
   console.log(get(xpos, ypos)[0]);
   console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if(get(xpos, ypos)[0] != 255) {
-    console.log('off course');
+  if(get(xpos, ypos)[0] == 224) {
+    console.log('dead');
+  }
+  if(get(xpos, ypos)[0] == 0) {
+    console.log('win');
   }
 
 
