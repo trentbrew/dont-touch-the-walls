@@ -1,6 +1,8 @@
 var x, y, z;
 var xpos, ypos;
 var speed = 1;
+a = 0;
+trail = [];
 
 function setup() 
 {
@@ -19,17 +21,31 @@ function draw()
 {
   // set background color to white
   background(0);
+
+  console.log('speed: ' + speed);
   
 
   // add/subract xpos and ypos
   xpos = xpos - x;
-  ypos = ypos + y;
+  ypos = ypos + (y - 10);
 
   // wrap ellipse if over bounds
-  if(xpos > windowWidth) { xpos = windowWidth; x=-x }
-  if(xpos < 0) { xpos = 0; x=-x}
-  if(ypos > windowHeight) { ypos = windowHeight; y=-y }
-  if(ypos < 0) { ypos = 0; y=-y }
+  if(xpos > windowWidth) { 
+    xpos = windowWidth; 
+    x=-x 
+  }
+  if(xpos < 0) { 
+    xpos = 0; 
+    x=-x
+  }
+  if(ypos > windowHeight) { 
+    ypos = windowHeight; 
+    y=-y 
+  }
+  if(ypos < 0) { 
+    ypos = 0; 
+    y=-y 
+  }
 
   // draw ellipse
   fill(255, 0, 0);
