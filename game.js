@@ -20,7 +20,7 @@ function setup()
 function draw() 
 {
   // set background color to white
-  background(0);
+  background(255,255,255);
 
   console.log('speed: ' + speed);
   
@@ -48,18 +48,19 @@ function draw()
   }
 
   // draw ellipse
-  fill(255, 0, 0);
+  fill('#C06C84');
   ellipse(xpos, ypos, 25, 25);
   // music
   
 
   
   // display variables
-  fill(255);
+  fill('#bdbdbd');
   noStroke();
-  text("x: " + x, 25, 25);
-  text("y: " + y, 25, 50);
-  text("z: " + z, 25, 75); 
+  text("Don't touch the walls!", 25, 25);
+  text("x: " + x, 25, 50);
+  text("y: " + y, 25, 75);
+  text("z: " + z, 25, 100); 
 }
 
 // accelerometer Data
