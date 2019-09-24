@@ -14,8 +14,6 @@ function setup()
   // set canvas size
   createCanvas(375, 685);
 
-  //level loading
-
 
   // default values
   xpos = windowWidth/2;
@@ -78,6 +76,8 @@ function draw()
 // accelerometer Data
 window.addEventListener('devicemotion', function(e) 
 {
+
+  console.log('device moved');
   // get accelerometer values
   x = parseInt(e.accelerationIncludingGravity.x);
   y = parseInt(e.accelerationIncludingGravity.y);
