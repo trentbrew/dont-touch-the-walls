@@ -10,14 +10,21 @@ function setup()
   level = loadImage("./levels/level1.svg");
   console.log(level)
 
+  if(windowWidth < 768) {
+    new Image(level, 0, 0, windowWidth, windowHeight);
+  }
+  else {
+    new Image(level, 0, 0, 335, 685);
+  }
+
   rectMode(CENTER);
   // set canvas size
-  createCanvas(375, 685);
+  createCanvas(windowWidth, windowHeight);
 
 
   // default values
   xpos = windowWidth/2;
-  ypos = windowHeight/2;
+  ypos = 50;
   x = 0;
   y = 0;
 }
@@ -36,8 +43,8 @@ function draw()
   ypos = ypos + y;
 
   //current collision
-  console.log(get(xpos, ypos));
-
+  //console.log(get(xpos, ypos));
+  console.log('x: ' + xpos + ' y: ' + ypos);
 
 
   // wrap ellipse if over bounds
@@ -78,7 +85,7 @@ function draw()
 window.addEventListener('devicemotion', function(e) 
 {
 
-  console.log('device moved');
+  //console.log('device moved');
   // get accelerometer values
   x = parseInt(e.accelerationIncludingGravity.x);
   y = parseInt(e.accelerationIncludingGravity.y);
