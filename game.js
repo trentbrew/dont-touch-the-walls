@@ -35,7 +35,8 @@ function draw()
   xpos = xpos - x;
   ypos = ypos + y;
 
-  //console.log(get(xpos, ypos));
+  //current collision
+  console.log(get(xpos, ypos));
 
 
 
