@@ -43,8 +43,12 @@ function draw()
   ypos = ypos + y;
 
   //current collision
-  //console.log(get(xpos, ypos));
+  console.log(get(xpos, ypos)[0]);
   console.log('x: ' + xpos + ' y: ' + ypos);
+
+  if(get(xpos, ypos)[0] != 255) {
+    console.log('off course');
+  }
 
 
   // wrap ellipse if over bounds
