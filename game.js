@@ -8,19 +8,18 @@ let currentLevel = 0;
 
 function setup() 
 {
-  levels.push = loadImage("./levels/level1.svg");
-  levels.push = loadImage("./levels/level2.svg");
-  levels.push = loadImage("./levels/level3.svg");
-  levels.push = loadImage("./levels/level4.svg");
-  levels.push = loadImage("./levels/level5.svg");
-  levels.push = loadImage("./levels/level6.svg");
-  console.log(level)
+  levels.push = loadImage("./levels/level1.png");
+  levels.push = loadImage("./levels/level2.png");
+  levels.push = loadImage("./levels/level3.png");
+  levels.push = loadImage("./levels/level4.png");
+  levels.push = loadImage("./levels/level5.png");
+  levels.push = loadImage("./levels/level6.png");
 
   if(windowWidth < 768) {
-    new Image(levels[0], 0, 0, windowWidth, windowHeight);
+    new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
   }
   else {
-    new Image(levels[0], 0, 0, 335, 685);
+    new Image(levels[currentLevel], 0, 0, 335, 685);
   }
 
   rectMode(CENTER);
@@ -30,7 +29,7 @@ function setup()
 
   // default values
   xpos = windowWidth/2;
-  ypos = 50;
+  ypos = 20;
   x = 0;
   y = 0;
 }
