@@ -3,17 +3,17 @@ var xpos, ypos;
 var speed = 1;
 a = 0;
 trail = [];
-let level;
+let levels = [];
 
 function setup() {
-  level = loadImage("./levels/level1.png");
-  console.log(level)
+  level.push(loadImage("./levels/level1.png"));
+  console.log(levels)
 
   if(windowWidth < 768) {
-    new Image(level, 0, 0, windowWidth, windowHeight);
+    new Image(levels[0], 0, 0, windowWidth, windowHeight);
   }
   else {
-    new Image(level, 0, 0, 335, 685);
+    new Image(levels[0], 0, 0, 335, 685);
   }
 
   rectMode(CENTER);
@@ -31,7 +31,7 @@ function setup() {
 function draw() 
 {
   // set background color to white
-  background(level);
+  background(levels[0]);
   //image(img, 0, 0);
 
   //console.log('speed: ' + speed);
