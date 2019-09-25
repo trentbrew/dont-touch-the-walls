@@ -8,7 +8,7 @@ let currentLevel = 0;
 
 function setup() 
 {
-  levels.push = loadImage("./levels/level1.png");
+  levels.push = loadImage("./levels/level1.svg");
   levels.push = loadImage("./levels/level2.svg");
   levels.push = loadImage("./levels/level3.svg");
   levels.push = loadImage("./levels/level4.svg");
