@@ -3,18 +3,24 @@ var xpos, ypos;
 var speed = 1;
 a = 0;
 trail = [];
-let level;
+let levels = [];
+let currentLevel = 0;
 
 function setup() 
 {
-  level = loadImage("./levels/level1.svg");
+  levels.push = loadImage("./levels/level1.png");
+  levels.push = loadImage("./levels/level2.svg");
+  levels.push = loadImage("./levels/level3.svg");
+  levels.push = loadImage("./levels/level4.svg");
+  levels.push = loadImage("./levels/level5.svg");
+  levels.push = loadImage("./levels/level6.svg");
   console.log(level)
 
   if(windowWidth < 768) {
-    new Image(level, 0, 0, windowWidth, windowHeight);
+    new Image(levels[0], 0, 0, windowWidth, windowHeight);
   }
   else {
-    new Image(level, 0, 0, 335, 685);
+    new Image(levels[0], 0, 0, 335, 685);
   }
 
   rectMode(CENTER);
@@ -32,7 +38,7 @@ function setup()
 function draw() 
 {
   // set background color to white
-  background(level);
+  background(levels[currentLevel]);
   //image(img, 0, 0);
 
   //console.log('speed: ' + speed);
@@ -60,6 +66,7 @@ function draw()
   }
   if(get(xpos, ypos)[1] == 209) {
     console.log('win');
+    currentLevel++;
     background(0,255,0);
   }
 
