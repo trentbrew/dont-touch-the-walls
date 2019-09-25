@@ -6,7 +6,7 @@ trail = [];
 let level;
 
 function setup() {
-  level = loadImage("./levels/level1.svg");
+  level = loadImage("./levels/level1.png");
   console.log(level)
 
   if(windowWidth < 768) {
@@ -28,7 +28,8 @@ function setup() {
   y = 0;
 }
 
-function draw() {
+function draw() 
+{
   // set background color to white
   background(level);
   //image(img, 0, 0);
