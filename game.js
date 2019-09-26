@@ -4,9 +4,12 @@ var speed = 1;
 a = 0;
 trail = [];
 let levels = [];
+let currentLevel = 0;
 
 function setup() {
   level.push(loadImage("./levels/level1.png"));
+  level.push(loadImage("./levels/level2.png"));
+  level.push(loadImage("./levels/level3.png"));
   console.log(levels)
 
   if(windowWidth < 768) {
@@ -31,7 +34,7 @@ function setup() {
 function draw() 
 {
   // set background color to white
-  background(levels[0]);
+  background(levels[currentLevel]);
   //image(img, 0, 0);
 
   //console.log('speed: ' + speed);
@@ -59,7 +62,7 @@ function draw()
   }
   if(get(xpos, ypos)[1] == 209) {
     console.log('win');
-    background(0,255,0);
+    currentLevel++;
   }
 
 
