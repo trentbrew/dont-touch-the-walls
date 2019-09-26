@@ -4,12 +4,16 @@ var speed = 1;
 a = 0;
 trail = [];
 let levels = [];
+let currentLevel = 0;
 
 function setup() {
   levels.push(loadImage("./levels/level1.png"));
+  levels.push(loadImage("./levels/level2.png"));
   console.log(levels)
 
-  new Image(levels[0], 0, 0, windowWidth, windowHeight);
+  for(i = 0; i < levels.length; i++) {
+    new Image(levels[i], 0, 0, windowWidth, windowHeight);
+  }
 
   rectMode(CENTER);
   // set canvas size
@@ -26,7 +30,7 @@ function setup() {
 function draw() 
 {
   // set background color to white
-  background(levels[0]);
+  background(levels[currentLevel]);
   //image(img, 0, 0);
 
   //console.log('speed: ' + speed);
@@ -38,7 +42,7 @@ function draw()
 
   if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
     background(0,0,0);
-    console.log('not on apple device');
+    console.log('apple device');
     xpos = xpos + x;
     ypos = ypos - y;
   }
