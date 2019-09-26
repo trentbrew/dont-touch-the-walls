@@ -52,7 +52,7 @@ function draw()
   console.log(get(xpos, ypos)[1]);
   //console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if((get(xpos, ypos)[1] == 224) {
+  if((get(xpos, ypos)[1] == 224)) {
     console.log('dead');
     xpos = windowWidth/2;
     ypos = 50;
