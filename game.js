@@ -5,10 +5,15 @@ a = 0;
 trail = [];
 let levels = [];
 let currentLevel = 0;
+let ballSize = 25;
 
 function setup() {
   levels.push(loadImage("./levels/level1.png"));
   levels.push(loadImage("./levels/level2.png"));
+  levels.push(loadImage("./levels/level3.png"));
+  levels.push(loadImage("./levels/level4.png"));
+  levels.push(loadImage("./levels/level5.png"));
+  levels.push(loadImage("./levels/level6.png"));
   console.log(levels)
 
   for(i = 0; i < levels.length; i++) {
@@ -58,6 +63,8 @@ function draw()
   }
   if(get(xpos, ypos)[1] == 209) {
     console.log('win');
+    xpos = windowWidth/2;
+    ypos = 30;
     currentLevel++;
   }
 
@@ -80,9 +87,9 @@ function draw()
     y=-y 
   }
 
-  // draw ellipse
+  // draw ball
   fill('#C06C84');
-  ellipse(xpos, ypos, 25, 25);
+  ellipse(xpos, ypos, ballSize);
   // music
   
 
