@@ -53,11 +53,13 @@ function draw() {
   if((get(xpos, ypos)[1] == 224)) {
     console.log('dead');
     xpos = windowWidth/2;
-    ypos = 50;
+    ypos = 30;
   }
-  if(get(xpos, ypos)[1] == 209) {
+  if((get(xpos, ypos)[1] == 209) || (get(xpos, ypos)[1] == 0)) {
     console.log('win');
-    background(0,255,0);
+    xpos = windowWidth/2;
+    ypos = 30;
+    currentLevel++;
   }
 
 
