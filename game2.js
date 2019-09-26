@@ -4,17 +4,16 @@ var speed = 1;
 a = 0;
 trail = [];
 let levels = [];
+let currentLevel = 0;
 
 function setup() {
-  level.push(loadImage("./levels/level1.png"));
+  levels.push(loadImage("./levels/level1.png"));
+  levels.push(loadImage("./levels/level2.png"));
+  levels.push(loadImage("./levels/level3.png"));
+  levels.push(loadImage("./levels/level4.png"));
   console.log(levels)
 
-  if(windowWidth < 768) {
-    new Image(levels[0], 0, 0, windowWidth, windowHeight);
-  }
-  else {
-    new Image(levels[0], 0, 0, 335, 685);
-  }
+  new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
 
   rectMode(CENTER);
   // set canvas size
@@ -23,15 +22,14 @@ function setup() {
 
   // default values
   xpos = windowWidth/2;
-  ypos = 50;
+  ypos = 30;
   x = 0;
   z = 0;
 }
 
-function draw() 
-{
+function draw() {
   // set background color to white
-  background(levels[0]);
+  background(levels[currentLevel]);
   //image(img, 0, 0);
 
   //console.log('speed: ' + speed);
