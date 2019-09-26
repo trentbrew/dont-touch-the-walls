@@ -6,9 +6,9 @@ trail = [];
 let levels = [];
 
 function setup() {
-  level.push(loadImage("./levels/level1.png"));
+  levels.push(loadImage("./levels/level1.png"));
   console.log(levels)
-  
+
   new Image(levels[0], 0, 0, windowWidth, windowHeight);
 
   rectMode(CENTER);
