@@ -12,7 +12,10 @@ function setup() {
   levels.push(loadImage("./levels/level2.png"));
   levels.push(loadImage("./levels/level3.png"));
   levels.push(loadImage("./levels/level4.png"));
-  new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
+
+  for(let i = 0; i < levels.length; i++) {
+    new Image(levels[i], 0, 0, windowWidth, windowHeight);
+  }
 
   rectMode(CENTER);
 
