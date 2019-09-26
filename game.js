@@ -58,7 +58,7 @@ function draw()
   }
   if(get(xpos, ypos)[1] == 209) {
     console.log('win');
-    background(0,255,0);
+    currentLevel++;
   }
 
 
