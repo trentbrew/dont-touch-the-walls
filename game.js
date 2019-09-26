@@ -14,6 +14,7 @@ function setup() {
   levels.push(loadImage("./levels/level4.png"));
   levels.push(loadImage("./levels/level5.png"));
   levels.push(loadImage("./levels/level6.png"));
+  levels.push(loadImage("./levels/level7.png"));
   console.log(levels)
 
   for(i = 0; i < levels.length; i++) {
