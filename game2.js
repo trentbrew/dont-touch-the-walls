@@ -24,7 +24,7 @@ function setup() {
   xpos = windowWidth/2;
   ypos = 30;
   x = 0;
-  z = 0;
+  y = 0;
 }
 
 function draw() {
@@ -37,7 +37,7 @@ function draw() {
 
   // add/subract xpos and ypos
   xpos = xpos - x;
-  ypos = ypos - z;
+  ypos = ypos + y;
 
   /*if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
     background(0,0,0);
