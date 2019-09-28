@@ -30,7 +30,7 @@ function setup() {
   ypos = 30;
   x = 0;
   y = 0;
-}
+} 
 
 function draw() {
   // set background color to white
@@ -55,12 +55,12 @@ function draw() {
   console.log(get(xpos, ypos)[1]);
   //console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if((get(xpos, ypos)[1] == 224)) {
+  if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[2] == 225)) {
     console.log('dead');
     xpos = windowWidth/2;
     ypos = 30;
   }
-  if((get(xpos, ypos)[1] == 209) || (get(xpos, ypos)[1] == 0)) {
+  if((get(xpos, ypos)[2] == 161) || (get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
     console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
