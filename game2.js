@@ -9,12 +9,12 @@ let currentLevel = 0;
 function setup() {
   levels.push(loadImage("./levels/lvl1.png"));
   levels.push(loadImage("./levels/lvl2.png"));
-  levels.push(loadImage("./levels/level3.png"));
-  levels.push(loadImage("./levels/level4.png"));
-  levels.push(loadImage("./levels/level5.png"));
-  levels.push(loadImage("./levels/level6.png"));
-  levels.push(loadImage("./levels/level7.png"));
+  levels.push(loadImage("./levels/lvl2-2.png"));
   levels.push(loadImage("./levels/lvl3.png"));
+  levels.push(loadImage("./levels/lvl3-2.png"));
+  levels.push(loadImage("./levels/lvl4.png"));
+  levels.push(loadImage("./levels/lvl4-2.png"));
+  levels.push(loadImage("./levels/lvl4-3.png"));
 
   console.log(levels)
 
@@ -60,10 +60,13 @@ function draw() {
     xpos = windowWidth/2;
     ypos = 30;
   }
-  if((get(xpos, ypos)[2] == 161) || (get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
-    console.log('win');
+  if((get(xpos, ypos)[2] == 161) /*green*/) {
+    currentLevel++;
+  }
+  if((get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
     xpos = windowWidth/2;
     ypos = 30;
+    console.log('win');
     currentLevel++;
   }
 
