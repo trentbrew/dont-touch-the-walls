@@ -7,23 +7,16 @@ let levels = [];
 let currentLevel = 0;
 
 function setup() {
-  levels.push(loadImage("./levelsnew/level1.png"));
-  levels.push(loadImage("./levelsnew/level2.png"));
-  levels.push(loadImage("./levelsnew/level2-2.png"));
-  levels.push(loadImage("./levelsnew/level3.png"));
-  levels.push(loadImage("./levelsnew/level3-3.png"));
-  levels.push(loadImage("./levelsnew/level4.png"));
-  levels.push(loadImage("./levelsnew/level4-2.png"));
-  levels.push(loadImage("./levelsnew/level4-3.png"));
-  levels.push(loadImage("./levelsnew/level5.png"));
-  levels.push(loadImage("./levelsnew/level5-2.png"));
-  levels.push(loadImage("./levelsnew/level5-3.png"));
-  levels.push(loadImage("./levelsnew/level6.png"));
-  levels.push(loadImage("./levelsnew/level6-2.png"));
-  levels.push(loadImage("./levelsnew/level6-3.png"));
+  levels.push(loadImage("./levels/lvl1.png"));
+  levels.push(loadImage("./levels/level2.png"));
+  levels.push(loadImage("./levels/level3.png"));
+  levels.push(loadImage("./levels/level4.png"));
+  levels.push(loadImage("./levels/level5.png"));
+  levels.push(loadImage("./levels/level6.png"));
+  levels.push(loadImage("./levels/level7.png"));
   console.log(levels)
 
-  new Image(levels[currentLevel], 0, 0, 1920, 1080);
+  new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
 
   rectMode(CENTER);
   // set canvas size
