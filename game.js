@@ -8,13 +8,20 @@ let currentLevel = 0;
 let ballSize = 25;
 
 function setup() {
-  levels.push(loadImage("./levels/level7.png"));
-  levels.push(loadImage("./levels/level2.png"));
-  levels.push(loadImage("./levels/level3.png"));
-  levels.push(loadImage("./levels/level4.png"));
-  levels.push(loadImage("./levels/level5.png"));
-  levels.push(loadImage("./levels/level6.png"));
-  //levels.push(loadImage("./levels/level7.png"));
+  levels.push(loadImage("./levelsnew/level1.png"));
+  levels.push(loadImage("./levelsnew/level2.png"));
+  levels.push(loadImage("./levelsnew/level2-2.png"));
+  levels.push(loadImage("./levelsnew/level3.png"));
+  levels.push(loadImage("./levelsnew/level3-3.png"));
+  levels.push(loadImage("./levelsnew/level4.png"));
+  levels.push(loadImage("./levelsnew/level4-2.png"));
+  levels.push(loadImage("./levelsnew/level4-3.png"));
+  levels.push(loadImage("./levelsnew/level5.png"));
+  levels.push(loadImage("./levelsnew/level5-2.png"));
+  levels.push(loadImage("./levelsnew/level5-3.png"));
+  levels.push(loadImage("./levelsnew/level6.png"));
+  levels.push(loadImage("./levelsnew/level6-2.png"));
+  levels.push(loadImage("./levelsnew/level6-3.png"));
   console.log(levels)
 
   for(i = 0; i < levels.length; i++) {
@@ -57,12 +64,14 @@ function draw()
   console.log(get(xpos, ypos)[1]);
   console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if((get(xpos, ypos)[1] == 224) || (get(xpos, ypos)[1] == 0)) {
+  //loss condition
+  if((get(xpos, ypos)[2] == 224) || (get(xpos, ypos)[2] == 225) || (get(xpos, ypos)[2] == 255)) {
     console.log('dead');
     xpos = windowWidth/2;
     ypos = 30;
   }
-  if(get(xpos, ypos)[1] == 209) {
+  //win condition
+  if((get(xpos, ypos)[2] == 161) || (get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
     console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
