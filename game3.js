@@ -13,9 +13,8 @@ function setup() {
   levels.push(loadImage("./levels/level3.png"));
   levels.push(loadImage("./levels/level4.png"));
 
-  for(let i = 0; i < levels.length; i++) {
     new Image(levels[i], 0, 0, windowWidth, windowHeight);
-  }
+  
 
   rectMode(CENTER);
 
@@ -93,27 +92,4 @@ class Ball {
         fill('#C06C84');
         ellipse(this.xpos, this.ypos, this.size);
     }
-}
-
-//Timer object
-class Timer {
-
-}
-
-class AnimationControler {
-  constructor() {
-
-  }
-
-  next() {
-
-  }
-
-  ripple() {}
-
-  smear() {}
-
-  shrink() {}
-
-  grow() {}
 }
