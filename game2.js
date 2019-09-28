@@ -23,7 +23,7 @@ function setup() {
   levels.push(loadImage("./levelsnew/level6-3.png"));
   console.log(levels)
 
-  new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
+  new Image(levels[currentLevel], 0, 0, 1920, 1080);
 
   rectMode(CENTER);
   // set canvas size
