@@ -61,12 +61,12 @@ function draw() {
     ypos = 30;
   }
   if((get(xpos, ypos)[2] == 161) /*green*/) {
+    console.log('win');
+    xpos = windowWidth/2;
+    ypos = 30;
     currentLevel++;
   }
   if((get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
-    xpos = windowWidth/2;
-    ypos = 30;
-    console.log('win');
     currentLevel++;
   }
 
