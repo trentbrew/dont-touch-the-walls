@@ -21,7 +21,7 @@ function setup() {
   levels.push(loadImage("./levels/lvl6.png"));
   levels.push(loadImage("./levels/lvl6-2.png"));
   levels.push(loadImage("./levels/lvl6-3.png"));
-
+  levels.push(loadImage("./levels/win.png"));
   console.log(levels)
 
   new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
@@ -58,7 +58,7 @@ function draw() {
   }*/
 
   //current collision
-  console.log(get(xpos, ypos)[1]);
+  //console.log(get(xpos, ypos)[1]);
   //console.log('x: ' + xpos + ' y: ' + ypos);
 
   if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 255) || (get(xpos, ypos)[2] == 225)) {
