@@ -30,7 +30,6 @@ function setup() {
   // set canvas size
   createCanvas(windowWidth, windowHeight);
 
-
   // default values
   xpos = windowWidth/2;
   ypos = 30;
@@ -41,25 +40,10 @@ function setup() {
 function draw() {
   // set background color to white
   background(levels[currentLevel]);
-  //image(img, 0, 0);
-
-  //console.log('speed: ' + speed);
-  
 
   // add/subract xpos and ypos
   xpos = xpos - x;
   ypos = ypos + y;
-
-  /*if( /iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
-    background(0,0,0);
-    console.log('not on apple device');
-    xpos = xpos + x;
-    ypos = ypos - y;
-  }*/
-
-  //current collision
-  //console.log(get(xpos, ypos)[1]);
-  //console.log('x: ' + xpos + ' y: ' + ypos);
 
   if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 255) || (get(xpos, ypos)[2] == 225) || (get(xpos, ypos)[2] == 0)) {
     console.log('dead');
@@ -76,38 +60,10 @@ function draw() {
     currentLevel++;
   }
 
-
-  // wrap ellipse if over bounds
-  if(xpos > windowWidth) { 
-    xpos = windowWidth; 
-    x=-x 
-  }
-  if(xpos < 0) { 
-    xpos = 0; 
-    x=-x
-  }
-  if(ypos > windowHeight) { 
-    ypos = windowHeight; 
-    y=-y 
-  }
-  if(ypos < 0) { 
-    ypos = 0; 
-    y=-y 
-  }
-
   // draw ellipse
   fill('#000000');
   ellipse(xpos, ypos, 15, 15);
-  // music
-  
 
-  
-  // display variables
-  fill('#000000');
-  noStroke();
-  text("x: " + x, 25, 75);
-  text("y: " + y, 25, 100);
-  text("z: " + z, 25, 125); 
 }
 
 // accelerometer Data
