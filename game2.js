@@ -15,6 +15,12 @@ function setup() {
   levels.push(loadImage("./levels/lvl4.png"));
   levels.push(loadImage("./levels/lvl4-2.png"));
   levels.push(loadImage("./levels/lvl4-3.png"));
+  levels.push(loadImage("./levels/lvl5.png"));
+  levels.push(loadImage("./levels/lvl5-2.png"));
+  levels.push(loadImage("./levels/lvl5-3.png"));
+  levels.push(loadImage("./levels/lvl6.png"));
+  levels.push(loadImage("./levels/lvl6-2.png"));
+  levels.push(loadImage("./levels/lvl6-3.png"));
 
   console.log(levels)
 
@@ -55,7 +61,7 @@ function draw() {
   console.log(get(xpos, ypos)[1]);
   //console.log('x: ' + xpos + ' y: ' + ypos);
 
-  if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[2] == 225)) {
+  if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 225)) {
     console.log('dead');
     xpos = windowWidth/2;
     ypos = 30;
@@ -90,8 +96,8 @@ function draw() {
   }
 
   // draw ellipse
-  fill('#C06C84');
-  ellipse(xpos, ypos, 25, 25);
+  fill('#000000');
+  ellipse(xpos, ypos, 15, 15);
   // music
   
 
