@@ -5,6 +5,8 @@ a = 0;
 trail = [];
 let levels = [];
 let currentLevel = 0;
+let mousePositions = [];
+const MAX_POS = 15;
 
 function setup() {
   levels.push(loadImage("./levels/lvl1.png"));
@@ -61,8 +63,27 @@ function draw() {
   }
 
   // draw ellipse
-  fill('#000000');
   ellipse(xpos, ypos, 15, 15);
+  fill(0);
+
+  //draw trails
+
+  //how you're drawing your pose
+  ellipse(xpos, ypos, 15, 15);
+  fill(0);
+  
+  //how you're storing the last 50 poses
+  mousePositions.push({x: xpos, y: ypos});
+  
+  //removes poses that are older than 50
+  if (mousePositions.length > MAX_POS) {
+  	 mousePositions.shift();
+  }
+  for (let i = 0; i < mousePositions.length; i +=1) {
+    // how you want to draw the previous poses
+    // relate it to i to change pose drawing over time
+  	ellipse(mousePositions[i].x, mousePositions[i].y, i, i);
+  }
 
 }
 
