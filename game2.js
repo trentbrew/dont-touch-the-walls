@@ -82,30 +82,32 @@ function draw() {
     ypos = 30;
     currentLevel++;
   }
+  //blue
   if((get(xpos, ypos)[2] == 249)) {
-    splashColor = "#01CDFE";
     outerDiam = 0;
-    if(outerDiam > windowHeight * 1.2) {
-      console.log('done');
+    splashColor = "#01CDFE";
+    /*if(outerDiam > windowHeight * 1.2) {
+      //console.log('done');
       splashColor = "rgba(0,0,0,0)";
       currentLevel++;
     }
     else {
-      console.log(outerDiam);
-    }
+      //console.log(outerDiam);
+    }*/
 
   }
+  //purple
   if((get(xpos, ypos)[2] == 250)) {
-    splashColor = "B967FF";
     outerDiam = 0;
-    if(outerDiam > windowHeight * 1.2) {
-      console.log('done');
+    splashColor = "B967FF";
+    /*if(outerDiam > windowHeight * 1.2) {
+      //console.log('done');
       splashColor = "rgba(0,0,0,0)";
       currentLevel++;
     }
     else {
-      console.log(outerDiam);
-    }
+      //console.log(outerDiam);
+    }*/
 
   }
 
