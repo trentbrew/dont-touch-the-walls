@@ -52,11 +52,11 @@ function draw() {
       var fade = map(diam, 0, width, 0, 255);
       noStroke();
       fill(splashColor);
-      ellipse(0, 0, diam);
+      ellipse(xpos, ypos, diam);
     }
   }
   
-  outerDiam = outerDiam + 4;
+  outerDiam = outerDiam + 16;
   
   if(outerDiam > windowHeight * 1.2) {
       console.log('done');
@@ -65,7 +65,7 @@ function draw() {
     console.log(outerDiam);
   }
 
-  image(levels[0], 0, 0, windowWidth, windowHeight);
+  image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
 
   // add/subract xpos and ypos
   xpos = xpos - x;
@@ -82,11 +82,25 @@ function draw() {
     ypos = 30;
     currentLevel++;
   }
-  if((get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
-    splashColor = "#0373fc";
+  if((get(xpos, ypos)[2] == 249)) {
+    splashColor = "#01CDFE";
     outerDiam = 0;
     if(outerDiam > windowHeight * 1.2) {
       console.log('done');
+      splashColor = "rgba(0,0,0,0)";
+      currentLevel++;
+    }
+    else {
+      console.log(outerDiam);
+    }
+
+  }
+  if((get(xpos, ypos)[2] == 250)) {
+    splashColor = "B967FF";
+    outerDiam = 0;
+    if(outerDiam > windowHeight * 1.2) {
+      console.log('done');
+      splashColor = "rgba(0,0,0,0)";
       currentLevel++;
     }
     else {
