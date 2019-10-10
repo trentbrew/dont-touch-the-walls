@@ -12,7 +12,7 @@ var outerDiam = 0;
 
 function setup() {
   levels.push(loadImage("./levels/invisible.png"));
-  levels.push(loadImage("./levels/lvl2.png"));
+  levels.push(loadImage("./levels/invisible2.png"));
   levels.push(loadImage("./levels/lvl2-2.png"));
   levels.push(loadImage("./levels/lvl3.png"));
   levels.push(loadImage("./levels/lvl3-2.png"));
@@ -84,31 +84,20 @@ function draw() {
   }
   //blue
   if((get(xpos, ypos)[2] == 249)) {
-    outerDiam = 0;
     splashColor = "#01CDFE";
-    /*if(outerDiam > windowHeight * 1.2) {
-      //console.log('done');
-      splashColor = "rgba(0,0,0,0)";
+    redraw();
+    if(outerDiam > windowHeight * 1.2) {
       currentLevel++;
     }
-    else {
-      //console.log(outerDiam);
-    }*/
 
   }
   //purple
   if((get(xpos, ypos)[2] == 250)) {
-    outerDiam = 0;
     splashColor = "B967FF";
-    /*if(outerDiam > windowHeight * 1.2) {
-      //console.log('done');
-      splashColor = "rgba(0,0,0,0)";
+    redraw();
+    if(outerDiam > windowHeight * 1.2) {
       currentLevel++;
     }
-    else {
-      //console.log(outerDiam);
-    }*/
-
   }
 
   // draw ellipse
