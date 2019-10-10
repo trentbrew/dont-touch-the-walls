@@ -100,18 +100,18 @@ function draw() {
     splashColor = '#e0e0e0';
   }
 
+  //purple switch
+
+  if((get(xpos, ypos)[2] == 250)) {
+    purpleHit = true;
+    splash("#B866FE");
+  }
+
   //blue switch
 
   if((get(xpos, ypos)[2] == 249)) {
     blueHit = true;
     splash("#00C8F8");
-  }
-
-  //purple switch
-
-  if((get(xpos, ypos)[2] == 250)) {
-    purpleHit = true;
-    splash("#B967FE");
   }
 
   // draw ellipse
