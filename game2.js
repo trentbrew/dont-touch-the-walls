@@ -101,6 +101,7 @@ function draw() {
     purpleHit = false;
     splashable1 = true;
     splashable2 = true;
+    splashColor = '#e0e0e0';
   }
 
   //blue switch
