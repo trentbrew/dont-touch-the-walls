@@ -45,7 +45,7 @@ function draw() {
   // set background color to white
   background('#bdbdbd');
 
-  Image(levels[0], 0, 0);
+  new Image(levels[0], 0, 0);
 
   // add/subract xpos and ypos
   xpos = xpos - x;
