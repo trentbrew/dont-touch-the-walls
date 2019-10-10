@@ -11,8 +11,6 @@ var splashColor = '#e0e0e0';
 var outerDiam = 0;
 var blueHit = false;
 var purpleHit = false;
-var splashable1 = false;
-var splashable2 = false;
 
 function setup() {
   levels.push(loadImage("./levels/invisible.png"));
@@ -99,25 +97,21 @@ function draw() {
     currentLevel++;
     blueHit = false;
     purpleHit = false;
-    splashable1 = true;
-    splashable2 = true;
     splashColor = '#e0e0e0';
   }
 
   //blue switch
 
-  if(splashable1 == true) {
-    if((get(xpos, ypos)[2] == 249)) {
-      splash("#00C8F9");
-    }
+  if((get(xpos, ypos)[2] == 249)) {
+    blueHit = true;
+    splash("#00C8F8");
   }
 
   //purple switch
 
-  if(splashable2 == true) {
-    if((get(xpos, ypos)[2] == 250)) {
-      splash("#B967FF");
-    }
+  if((get(xpos, ypos)[2] == 250)) {
+    purpleHit = true;
+    splash("#B967FE");
   }
 
   // draw ellipse
@@ -161,8 +155,5 @@ function mouseClicked() {
 
 function splash(color) {
   outerDiam = 0;
-  blueHit = true;
   splashColor = color;
-  splashable1 = false;
-  //splashable2 = false;
 }
