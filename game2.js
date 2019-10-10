@@ -11,8 +11,8 @@ var splashColor = '#e0e0e0';
 var outerDiam = 0;
 var blueHit = false;
 var purpleHit = false;
-var splashable1 = true;
-var splashable2 = true;
+var splashable1 = false;
+var splashable2 = false;
 
 function setup() {
   levels.push(loadImage("./levels/invisible.png"));
@@ -22,7 +22,7 @@ function setup() {
   levels.push(loadImage("./levels/invisible5.png"));
   levels.push(loadImage("./levels/invisible6.png"));
 
-  console.log(levels)
+  //console.log(levels)
 
   new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
 
@@ -55,10 +55,10 @@ function draw() {
   outerDiam = outerDiam + 16;
   
   if(outerDiam > windowHeight * 1.2) {
-      console.log('done');
+      //console.log('done');
   }
   else {
-    console.log(outerDiam);
+    //console.log(outerDiam);
   }
 
   image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
