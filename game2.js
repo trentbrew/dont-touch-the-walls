@@ -7,7 +7,7 @@ let levels = [];
 let currentLevel = 0;
 let mousePositions = [];
 const MAX_POS = 15;
-var splashColor = '#bdbdbd';
+var splashColor = '#e0e0e0';
 var outerDiam = 0;
 var blueHit = false;
 var purpleHit = false;
@@ -90,12 +90,12 @@ function draw() {
   }
 
   if((get(xpos, ypos)[2] == 161) /*green*/) {
+    blueHit = false;
+    purpleHit = false;
     console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
     currentLevel++;
-    blueHit = false;
-    purpleHit = false;
   }
 
   //blue switch
