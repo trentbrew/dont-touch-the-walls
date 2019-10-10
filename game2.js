@@ -9,23 +9,16 @@ let mousePositions = [];
 const MAX_POS = 15;
 var splashColor = '#bdbdbd';
 var outerDiam = 0;
+var blueHit = false;
+var purpleHit = false;
 
 function setup() {
   levels.push(loadImage("./levels/invisible.png"));
   levels.push(loadImage("./levels/invisible2.png"));
-  levels.push(loadImage("./levels/lvl2-2.png"));
-  levels.push(loadImage("./levels/lvl3.png"));
-  levels.push(loadImage("./levels/lvl3-2.png"));
-  levels.push(loadImage("./levels/lvl4.png"));
-  levels.push(loadImage("./levels/lvl4-2.png"));
-  levels.push(loadImage("./levels/lvl4-3.png"));
-  levels.push(loadImage("./levels/lvl5.png"));
-  levels.push(loadImage("./levels/lvl5-2.png"));
-  levels.push(loadImage("./levels/lvl5-3.png"));
-  levels.push(loadImage("./levels/lvl6.png"));
-  levels.push(loadImage("./levels/lvl6-2.png"));
-  levels.push(loadImage("./levels/lvl6-3.png"));
-  levels.push(loadImage("./levels/win.png"));
+  levels.push(loadImage("./levels/invisible3.png"));
+  levels.push(loadImage("./levels/invisible4.png"));
+  levels.push(loadImage("./levels/invisible5.png"));
+
   console.log(levels)
 
   new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
@@ -71,33 +64,55 @@ function draw() {
   xpos = xpos - x;
   ypos = ypos + y;
 
-  if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 255) || (get(xpos, ypos)[2] == 225) || (get(xpos, ypos)[2] == 0)) {
+  //death cases
+
+  //
+  if((get(xpos, ypos)[0] == 255) /*white*/ || (get(xpos, ypos)[2] == 0) /*black*/) {
     console.log('dead');
     xpos = windowWidth/2;
     ypos = 30;
   }
+
+  if((get(xpos, ypos)[1] == 102) /*purple gate*/) {
+    if(purpleHit == false) {
+      console.log('dead');
+      xpos = windowWidth/2;
+      ypos = 30;
+    }
+  }
+
+  if((get(xpos, ypos)[2] == 248) /*blue gate*/) {
+    if(blueHit == false) {
+      console.log('dead');
+      xpos = windowWidth/2;
+      ypos = 30;
+    }
+  }
+
   if((get(xpos, ypos)[2] == 161) /*green*/) {
     console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
     currentLevel++;
+    blueHit = false;
+    purpleHit = false;
   }
-  //blue
-  if((get(xpos, ypos)[2] == 249)) {
-    splashColor = "#01CDFE";
-    if(outerDiam > windowHeight * 1.2) {
-      outerDiam = 0;
-      //currentLevel++;
-    }
 
-  }
-  //purple
-  if((get(xpos, ypos)[2] == 250)) {
-    splashColor = "B967FF";
-    redraw();
-    if(outerDiam > windowHeight * 1.2) {
-      currentLevel++;
+  //blue switch
+  if((get(xpos, ypos)[2] == 249)) {
+    if(blueHit == false) {
+      outerDiam = 0;
     }
+    blueHit = true;
+    splashColor = "#00C8F9";
+  }
+  //purple switch
+  if((get(xpos, ypos)[2] == 250)) {
+    if(purpleHit == false) {
+      outerDiam = 0;
+    }
+    purpleHit = true;
+    splashColor = "B967FF";
   }
 
   // draw ellipse
@@ -128,3 +143,13 @@ window.addEventListener('devicemotion', function(e)
   y = parseInt(e.accelerationIncludingGravity.y);
   z = parseInt(e.accelerationIncludingGravity.z);
 });
+
+//for debugging
+function mouseClicked() {
+  console.log('win');
+  xpos = windowWidth/2;
+  ypos = 30;
+  currentLevel++;
+  blueHit = false;
+  purpleHit = false;
+}
