@@ -110,7 +110,6 @@ function draw() {
     if((get(xpos, ypos)[2] == 249)) {
       splash("#00C8F9");
     }
-    splashable1 = false;
   }
 
   //purple switch
@@ -119,7 +118,6 @@ function draw() {
     if((get(xpos, ypos)[2] == 250)) {
       splash("#B967FF");
     }
-    splashable2 = false;
   }
 
   // draw ellipse
@@ -165,4 +163,6 @@ function splash(color) {
   outerDiam = 0;
   blueHit = true;
   splashColor = color;
+  splashable1 = false;
+  //splashable2 = false;
 }
