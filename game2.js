@@ -93,14 +93,14 @@ function draw() {
   }
 
   if((get(xpos, ypos)[2] == 161) /*green*/) {
-    blueHit = false;
-    purpleHit = false;
-    splashable1 = true;
-    splashable2 = true;
     console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
     currentLevel++;
+    blueHit = false;
+    purpleHit = false;
+    splashable1 = true;
+    splashable2 = true;
   }
 
   //blue switch
