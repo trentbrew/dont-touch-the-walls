@@ -17,8 +17,11 @@ function setup() {
   levels.push(loadImage("./levels/invisible2.png"));
   levels.push(loadImage("./levels/invisible3.png"));
   levels.push(loadImage("./levels/invisible4.png"));
+  levels.push(loadImage("./levels/invisible4-2.png"));
   levels.push(loadImage("./levels/invisible5.png"));
+  levels.push(loadImage("./levels/invisible5-2.png"));
   levels.push(loadImage("./levels/invisible6.png"));
+  levels.push(loadImage("./levels/invisible6-2.png"));
 
   //console.log(levels)
 
@@ -105,6 +108,7 @@ function draw() {
   if((get(xpos, ypos)[1] == 103)) {
     purpleHit = true;
     splash("#B866FE");
+    currentLevel++;
   }
 
   //blue switch
@@ -112,6 +116,7 @@ function draw() {
   if((get(xpos, ypos)[2] == 249)) {
     blueHit = true;
     splash("#00C8F8");
+    currentLevel++;
   }
 
   // draw ellipse
