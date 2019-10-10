@@ -85,8 +85,8 @@ function draw() {
   //blue
   if((get(xpos, ypos)[2] == 249)) {
     splashColor = "#01CDFE";
-    redraw();
     if(outerDiam > windowHeight * 1.2) {
+      outerDiam = 0;
       //currentLevel++;
     }
 
