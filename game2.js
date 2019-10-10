@@ -43,7 +43,27 @@ function setup() {
 
 function draw() {
   // set background color to white
-  background('#bdbdbd');
+  background('#e0e0e0');
+
+  //splash animation
+  for(var i = 0; i < 1; i+=1) {
+    var diam = outerDiam - 30 * i;    
+    if (diam > 0) {
+      var fade = map(diam, 0, width, 0, 255);
+      noStroke();
+      fill(splashColor);
+      ellipse(0, 0, diam);
+    }
+  }
+  
+  outerDiam = outerDiam + 4;
+  
+  if(outerDiam > windowHeight * 1.2) {
+      console.log('done');
+  }
+  else {
+    console.log(outerDiam);
+  }
 
   image(levels[0], 0, 0, windowWidth, windowHeight);
 
@@ -91,26 +111,6 @@ function draw() {
   }
   for (let i = 0; i < mousePositions.length; i +=1) {
   	ellipse(mousePositions[i].x, mousePositions[i].y, i, i);
-  }
-
-  //splash animation
-  for(var i = 0; i < 1; i+=1) {
-		var diam = outerDiam - 30 * i;    
-    if (diam > 0) {
-      var fade = map(diam, 0, width, 0, 255);
-	    noStroke();
-      fill(splashColor);
-      ellipse(0, 0, diam);
-    }
-  }
-  
-  outerDiam = outerDiam + 4;
-  
-  if(outerDiam > windowHeight * 1.2) {
-     console.log('done');
-  }
-  else {
-    console.log(outerDiam);
   }
 
 }
