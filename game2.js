@@ -102,7 +102,7 @@ function draw() {
 
   //purple switch
 
-  if((get(xpos, ypos)[2] == 250)) {
+  if((get(xpos, ypos)[1] == 103)) {
     purpleHit = true;
     splash("#B866FE");
   }
