@@ -11,7 +11,7 @@ var splashColor = '#bdbdbd';
 var outerDiam = 0;
 
 function setup() {
-  levels.push(loadImage("./levels/lvl1.png"));
+  levels.push(loadImage("./levels/invisible.png"));
   levels.push(loadImage("./levels/lvl2.png"));
   levels.push(loadImage("./levels/lvl2-2.png"));
   levels.push(loadImage("./levels/lvl3.png"));
@@ -43,7 +43,9 @@ function setup() {
 
 function draw() {
   // set background color to white
-  background(levels[currentLevel]);
+  background('#bdbdbd');
+
+  Image(levels[0], 0, 0);
 
   // add/subract xpos and ypos
   xpos = xpos - x;
