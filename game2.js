@@ -7,6 +7,8 @@ let levels = [];
 let currentLevel = 0;
 let mousePositions = [];
 const MAX_POS = 15;
+var splashColor = '#bdbdbd';
+var outerDiam = 0;
 
 function setup() {
   levels.push(loadImage("./levels/lvl1.png"));
@@ -59,7 +61,16 @@ function draw() {
     currentLevel++;
   }
   if((get(xpos, ypos)[2] == 249) || (get(xpos, ypos)[2] == 250)) {
-    currentLevel++;
+    splashColor = "#0373fc";
+    outerDiam = 0;
+    if(outerDiam > windowHeight * 1.2) {
+      console.log('done');
+      currentLevel++;
+    }
+    else {
+      console.log(outerDiam);
+    }
+
   }
 
   // draw ellipse
@@ -71,18 +82,33 @@ function draw() {
   //how you're drawing your pose
   ellipse(xpos, ypos, 15, 15);
   fill(0);
-  
-  //how you're storing the last 50 poses
+
   mousePositions.push({x: xpos, y: ypos});
-  
-  //removes poses that are older than 50
   if (mousePositions.length > MAX_POS) {
   	 mousePositions.shift();
   }
   for (let i = 0; i < mousePositions.length; i +=1) {
-    // how you want to draw the previous poses
-    // relate it to i to change pose drawing over time
   	ellipse(mousePositions[i].x, mousePositions[i].y, i, i);
+  }
+
+  //splash animation
+  for(var i = 0; i < 1; i+=1) {
+		var diam = outerDiam - 30 * i;    
+    if (diam > 0) {
+      var fade = map(diam, 0, width, 0, 255);
+	    noStroke();
+      fill(splashColor);
+      ellipse(0, 0, diam);
+    }
+  }
+  
+  outerDiam = outerDiam + 4;
+  
+  if(outerDiam > windowHeight * 1.2) {
+     console.log('done');
+  }
+  else {
+    console.log(outerDiam);
   }
 
 }
