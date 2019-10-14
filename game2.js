@@ -72,14 +72,14 @@ function draw() {
 
   //
   if((get(xpos, ypos)[0] == 255) /*white*/ || (get(xpos, ypos)[2] == 0) /*black*/) {
-    console.log('dead');
+    //console.log('dead');
     xpos = windowWidth/2;
     ypos = 30;
   }
 
   if((get(xpos, ypos)[1] == 102) /*purple gate*/) {
     if(purpleHit == false) {
-      console.log('dead');
+      //console.log('dead');
       xpos = windowWidth/2;
       ypos = 30;
     }
@@ -87,14 +87,14 @@ function draw() {
 
   if((get(xpos, ypos)[2] == 248) /*blue gate*/) {
     if(blueHit == false) {
-      console.log('dead');
+      //console.log('dead');
       xpos = windowWidth/2;
       ypos = 30;
     }
   }
 
   if((get(xpos, ypos)[2] == 161) /*green*/) {
-    console.log('win');
+    //console.log('win');
     xpos = windowWidth/2;
     ypos = 30;
     currentLevel++;
@@ -108,7 +108,6 @@ function draw() {
   if((get(xpos, ypos)[1] == 103)) {
     purpleHit = true;
     splash("#B866FE");
-    currentLevel++;
   }
 
   //blue switch
@@ -116,7 +115,6 @@ function draw() {
   if((get(xpos, ypos)[2] == 249)) {
     blueHit = true;
     splash("#00C8F8");
-    currentLevel++;
   }
 
   // draw ellipse
