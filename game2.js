@@ -55,6 +55,11 @@ function draw() {
     xpos = Math.floor(windowWidth/2);
     ypos = 30;
   }*/
+  if((get(xpos, ypos)[0] == 255) && (get(xpos, ypos)[1] == 255) && (get(xpos, ypos)[2] == 255)) {
+    console.log('dead');
+    xpos = Math.floor(windowWidth/2);
+    ypos = 30;
+  }
   if((get(xpos, ypos)[2] == 161) /*green*/) {
     console.log('win');
     xpos = Math.floor(windowWidth/2);
