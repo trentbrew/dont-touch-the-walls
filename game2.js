@@ -25,7 +25,7 @@ function setup() {
   levels.push(loadImage("./levels/lvl6-2.png"));
   levels.push(loadImage("./levels/lvl6-3.png"));
   levels.push(loadImage("./levels/win.png"));
-  console.log(levels)
+  //console.log(levels)
 
   new Image(levels[currentLevel], 0, 0, windowWidth, windowHeight);
 
@@ -34,7 +34,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
 
   // default values
-  xpos = windowWidth/2;
+  xpos = Math.floor(windowWidth/2);
   ypos = 30;
   x = 0;
   y = 0;
@@ -48,14 +48,16 @@ function draw() {
   xpos = xpos - x;
   ypos = ypos + y;
 
-  if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 255) || (get(xpos, ypos)[2] == 225) || (get(xpos, ypos)[2] == 0)) {
+  //console.log('current: ', get(xpos, ypos));
+
+  /*if((get(xpos, ypos)[1] == 175) || (get(xpos, ypos)[0] == 255) || (get(xpos, ypos)[2] == 225) || (get(xpos, ypos)[2] == 0)) {
     console.log('dead');
-    xpos = windowWidth/2;
+    xpos = Math.floor(windowWidth/2);
     ypos = 30;
-  }
+  }*/
   if((get(xpos, ypos)[2] == 161) /*green*/) {
     console.log('win');
-    xpos = windowWidth/2;
+    xpos = Math.floor(windowWidth/2);
     ypos = 30;
     currentLevel++;
   }
@@ -92,7 +94,7 @@ function draw() {
 window.addEventListener('devicemotion', function(e) 
 {
   // get accelerometer values
-  x = parseInt(e.accelerationIncludingGravity.x);
-  y = parseInt(e.accelerationIncludingGravity.y);
-  z = parseInt(e.accelerationIncludingGravity.z);
+  x = Math.floor(e.accelerationIncludingGravity.x);
+  y = Math.floor(e.accelerationIncludingGravity.y);
+  z = Math.floor(e.accelerationIncludingGravity.z);
 });
